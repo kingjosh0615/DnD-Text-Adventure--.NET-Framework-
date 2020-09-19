@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DnD_Text_Adventure__.NET_Framework_
 {
-    class CharacterCreator
+    public class CharacterCreator
     {
         public string characterName;
         public string characterRace;

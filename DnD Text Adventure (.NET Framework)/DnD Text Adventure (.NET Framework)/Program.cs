@@ -18,7 +18,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         static int currentAIOneInitiative;
         static int currentAITwoInitiative;
        
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Random rand = new Random();
 
@@ -55,7 +55,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             AiCharacterOne.initativeModifier = AiCharacterOne.dexterityMod;
 
             CharacterCreator AiCharacterTwo = new CharacterCreator();
-            PlayersCharacter.healthPoints = rand.Next(10, 20);
+            AiCharacterTwo.maxHealthPoints = rand.Next(10, 20);
             AiCharacterTwo.strength = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
             AiCharacterTwo.strengthMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterTwo.strength - 10) / 2)));
             AiCharacterTwo.dexterity = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
@@ -164,6 +164,10 @@ namespace DnD_Text_Adventure__.NET_Framework_
         {
             Random rand = new Random();
 
+            CharacterCreator.CharacterBlueprint();
+
+            
+            CharacterCreator.strength = 5;
             currentEnemy = enemies[Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 6) - 1)))];
             currentEnemyInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
             currentPlayerInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
@@ -173,7 +177,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             Console.WriteLine($"Oh no! You encountered a {currentEnemy}!");
 
             Console.WriteLine();
-            
+            //while ()
         }
     }
 }
