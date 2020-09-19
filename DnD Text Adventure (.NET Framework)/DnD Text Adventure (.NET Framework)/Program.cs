@@ -8,14 +8,22 @@ namespace DnD_Text_Adventure__.NET_Framework_
 {
     class Program
     {
+
         static bool QuestionConfirmationStopper = true;
         static string userInput;
+        static string[] enemies = { "goblin", "troll", "skeleton", "ghoul", "skeleton" };
+        static string currentEnemy;
+        static int currentEnemyInitiative;
+        static int currentPlayerInitiative;
+        static int currentAIOneInitiative;
+        static int currentAITwoInitiative;
+       
         static void Main(string[] args)
         {
             Random rand = new Random();
 
             CharacterCreator PlayersCharacter = new CharacterCreator();
-            PlayersCharacter.healthPoints = rand.Next(10, 20);
+            PlayersCharacter.maxHealthPoints = rand.Next(10, 20);
             PlayersCharacter.strength = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
             PlayersCharacter.strengthMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((PlayersCharacter.strength - 10) / 2)));
             PlayersCharacter.dexterity = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
@@ -31,7 +39,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             PlayersCharacter.initativeModifier = PlayersCharacter.dexterityMod;
 
             CharacterCreator AiCharacterOne = new CharacterCreator();
-            AiCharacterOne.healthPoints = rand.Next(10, 20);
+            AiCharacterOne.maxHealthPoints = rand.Next(10, 20);
             AiCharacterOne.strength = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
             AiCharacterOne.strengthMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterOne.strength - 10) / 2)));
             AiCharacterOne.dexterity = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
@@ -62,7 +70,6 @@ namespace DnD_Text_Adventure__.NET_Framework_
             AiCharacterTwo.charismaMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterTwo.strength - 10) / 2)));
             AiCharacterTwo.initativeModifier = AiCharacterTwo.dexterityMod;
 
-            string[] enemies = {"goblin", "troll", "skeleton", "ghoul", "skeleton"};
 
             string tempPlayerInput;
             string tempDoubleChoiceSwitch;
@@ -155,7 +162,18 @@ namespace DnD_Text_Adventure__.NET_Framework_
         }
         public static void EnemyEncounter()
         {
+            Random rand = new Random();
 
+            currentEnemy = enemies[Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 6) - 1)))];
+            currentEnemyInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
+            currentPlayerInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
+            currentAIOneInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
+            currentAITwoInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
+
+            Console.WriteLine($"Oh no! You encountered a {currentEnemy}!");
+
+            Console.WriteLine();
+            
         }
     }
 }
