@@ -1,0 +1,7 @@
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).csprojAssemblyReference.cache
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).csproj.CoreCompileInputs.cache
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).exe.config
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).exe
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).pdb
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).exe
+D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).pdb

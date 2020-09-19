@@ -9,6 +9,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
     class Program
     {
         static bool QuestionConfirmationStopper = true;
+        static string userInput;
         static void Main(string[] args)
         {
             Random rand = new Random();
@@ -61,6 +62,8 @@ namespace DnD_Text_Adventure__.NET_Framework_
             AiCharacterTwo.charismaMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterTwo.strength - 10) / 2)));
             AiCharacterTwo.initativeModifier = AiCharacterTwo.dexterityMod;
 
+            string[] enemies = {"goblin", "troll", "skeleton", "ghoul", "skeleton"};
+
             string tempPlayerInput;
             string tempDoubleChoiceSwitch;
 
@@ -68,14 +71,11 @@ namespace DnD_Text_Adventure__.NET_Framework_
             Console.WriteLine("Input your character's name.");
             PlayersCharacter.characterName = Console.ReadLine();
             Console.WriteLine("Now you need to pick you class. Your friends already picked most of the classes so now you can choose rouge or cleric.");
-            tempPlayerInput = Console.ReadLine();
-            PlayersCharacter.characterClass = DoubleQuestionConfirmation(tempPlayerInput, "Rouge", "Cleric");
+            PlayersCharacter.characterClass = DoubleQuestionConfirmation("Rouge", "Cleric");
             Console.WriteLine("Time to choose your race. Would you like to be an elf, dwarf, or human?");
-            tempPlayerInput = Console.ReadLine();
-            PlayersCharacter.characterRace = TripleQuestionConfirmation(tempPlayerInput, "Elf", "Dwarf", "Human");
+            PlayersCharacter.characterRace = TripleQuestionConfirmation("Elf", "Dwarf", "Human");
             Console.WriteLine("What would you like as a sidearm, sword, dagger, or blunderbuss?");
-            tempPlayerInput = Console.ReadLine();
-            PlayersCharacter.sideArm = TripleQuestionConfirmation(tempPlayerInput, "sword", "dagger", "blunderbuss");
+            PlayersCharacter.sideArm = TripleQuestionConfirmation("sword", "dagger", "blunderbuss");
 
             AiCharacterOne.characterClass = "Mage";
             AiCharacterTwo.characterClass = "Paladin";
@@ -89,14 +89,14 @@ namespace DnD_Text_Adventure__.NET_Framework_
             Console.WriteLine($"Alright so you are a {PlayersCharacter.characterRace} {PlayersCharacter.characterClass} named {PlayersCharacter.characterName}. Sounds like a pretty good build to me.");
             Console.WriteLine($"Your friends also made characters! They made a {AiCharacterOne.characterRace} {AiCharacterOne.characterClass} named {AiCharacterOne.characterName} and a {AiCharacterTwo.characterRace} {AiCharacterTwo.characterClass} named {AiCharacterTwo.characterName}.");
 
-
+            Console.WriteLine("You begin your hunt for the Lich's treasure at the enterance of his labyrinth.");
+            
 
 
         }
-        public static string DoubleQuestionConfirmation(string userInput, string optionOne, string optionTwo)
+        public static string DoubleQuestionConfirmation(string optionOne, string optionTwo)
         {
-            while (QuestionConfirmationStopper == true)
-            {
+                userInput = Console.ReadLine();
                 if (userInput.ToLower() == optionOne.ToLower())
                 {
                     QuestionConfirmationStopper = false;
@@ -107,21 +107,24 @@ namespace DnD_Text_Adventure__.NET_Framework_
                     QuestionConfirmationStopper = false;
                     return optionTwo;
                 }
+                else if (userInput.ToLower() != optionOne.ToLower() || userInput.ToLower() != optionTwo.ToLower())
+                {
+                    Console.WriteLine("Please input a valid answer.");
+                    //QuestionConfirmationStopper = true;
+                    DoubleQuestionConfirmation(optionOne, optionTwo);
+                    return "error";
+                }
                 else
                 {
-
-                    Console.WriteLine("Please input a valid answer.");
-                    QuestionConfirmationStopper = true;
-
-                }
-            }
-            return "c";
+                DoubleQuestionConfirmation(optionOne, optionTwo);
+                return "error";
+                }   
+            
         }
-        public static string TripleQuestionConfirmation(string userInput, string optionOne, string optionTwo, string optionThree)
+        public static string TripleQuestionConfirmation(string optionOne, string optionTwo, string optionThree)
         {
-            while (QuestionConfirmationStopper == true)
-            {
-                if (userInput.ToLower() == optionOne.ToLower())
+            userInput = Console.ReadLine();
+            if (userInput.ToLower() == optionOne.ToLower())
                 {
                     QuestionConfirmationStopper = false;
                     return optionOne;
@@ -136,15 +139,19 @@ namespace DnD_Text_Adventure__.NET_Framework_
                     QuestionConfirmationStopper = false;
                     return optionThree;
                 }
-                else
+                else if (userInput.ToLower() != optionOne.ToLower() || userInput.ToLower() != optionTwo.ToLower() || userInput.ToLower() != optionThree.ToLower())
                 {
 
                     Console.WriteLine("Please input a valid answer.");
-                    QuestionConfirmationStopper = true;
-
+                    //QuestionConfirmationStopper = true;
+                    TripleQuestionConfirmation(optionOne, optionTwo, optionThree);
+                    return "error";
                 }
-            }
-            return "c";
+                else
+                {
+                    return "error";
+                }
+            
         }
         public static void EnemyEncounter()
         {
