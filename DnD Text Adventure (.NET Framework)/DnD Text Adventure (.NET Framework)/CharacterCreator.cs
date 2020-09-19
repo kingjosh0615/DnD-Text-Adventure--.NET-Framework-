@@ -12,7 +12,8 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public string characterRace;
         public string characterClass;
         public string sideArm;
-        public int healthPoints;
+        public int maxHealthPoints;
+        public int currentHealthPoints;
         public int initativeModifier;
         public int strength;
         public int strengthMod;
