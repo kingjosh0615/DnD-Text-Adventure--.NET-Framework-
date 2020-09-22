@@ -33,6 +33,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int charismaMod1;
         public static int initativeModifier1;
         public static string sidearm1;
+        public static string name1;
 
         public static int maxHealthPoints2;
         public static int strength2;
@@ -49,6 +50,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int charismaMod2;
         public static int initativeModifier2;
         public static string sidearm2;
+        public static string name2;
 
         public static int maxHealthPoints3;
         public static int strength3;
@@ -65,6 +67,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int charismaMod3;
         public static int initativeModifier3;
         public static string sidearm3;
+        public static string name3;
 
         public static void Main(string[] args)
         {
@@ -87,6 +90,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             PlayersCharacter.charismaMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((PlayersCharacter.charisma - 10) / 2)));
             PlayersCharacter.initativeModifier = PlayersCharacter.dexterityMod;
             PlayersCharacter.sideArm = "hand";
+            PlayersCharacter.characterName = "hand";
            
             CharacterCreator AiCharacterOne = new CharacterCreator();
             AiCharacterOne.maxHealthPoints = rand.Next(10, 20);
@@ -104,6 +108,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             AiCharacterOne.charismaMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterOne.charisma - 10) / 2)));
             AiCharacterOne.initativeModifier = AiCharacterOne.dexterityMod;
             AiCharacterOne.sideArm = "hand";
+            AiCharacterOne.characterName = "hand";
            
             CharacterCreator AiCharacterTwo = new CharacterCreator();
             AiCharacterTwo.maxHealthPoints = rand.Next(10, 20);
@@ -120,7 +125,8 @@ namespace DnD_Text_Adventure__.NET_Framework_
             AiCharacterTwo.charisma = rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7) + rand.Next(1, 7);
             AiCharacterTwo.charismaMod = Convert.ToInt32(Math.Floor(Convert.ToDouble((AiCharacterTwo.charisma - 10) / 2)));
             AiCharacterTwo.initativeModifier = AiCharacterTwo.dexterityMod;
-            AiCharacterOne.sideArm = "hand";
+            AiCharacterTwo.sideArm = "hand";
+            AiCharacterTwo.characterName = "hand";
            
             maxHealthPoints1 = PlayersCharacter.maxHealthPoints;
             strength1 = PlayersCharacter.strength;
@@ -137,6 +143,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             charismaMod1 = PlayersCharacter.charismaMod;
             initativeModifier1 = PlayersCharacter.initativeModifier;
             sidearm1 = PlayersCharacter.sideArm;
+            name1 = PlayersCharacter.characterName;
            
             maxHealthPoints2 = AiCharacterOne.maxHealthPoints;
             strength2 = AiCharacterOne.strength;
@@ -153,6 +160,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             charismaMod2 = AiCharacterOne.charismaMod;
             initativeModifier2 = AiCharacterOne.initativeModifier;
             sidearm2 = AiCharacterOne.sideArm;
+            name2 = AiCharacterOne.characterName;
            
             maxHealthPoints3 = AiCharacterTwo.maxHealthPoints;
             strength3 = AiCharacterTwo.strength;
@@ -169,6 +177,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             charismaMod3 = AiCharacterTwo.charismaMod;
             initativeModifier3 = AiCharacterTwo.initativeModifier;
             sidearm3 = AiCharacterTwo.sideArm;
+            name3 = AiCharacterTwo.characterName;
 
             string tempPlayerInput;
             string tempDoubleChoiceSwitch;
@@ -181,17 +190,17 @@ namespace DnD_Text_Adventure__.NET_Framework_
             PlayersCharacter.characterClass = DoubleQuestionConfirmation("Rouge", "Cleric");
             Console.WriteLine("Time to choose your race. Would you like to be an elf, dwarf, or human?");
             PlayersCharacter.characterRace = TripleQuestionConfirmation("Elf", "Dwarf", "Human");
-            Console.WriteLine("What would you like as a sidearm, sword, dagger, or blunderbuss?");
+            Console.WriteLine("What is your weapon of choice, A sword, dagger, or blunderbuss?");
             sidearm1 = TripleQuestionConfirmation("sword", "dagger", "blunderbuss");
 
             AiCharacterOne.characterClass = "Mage";
             AiCharacterTwo.characterClass = "Paladin";
-            AiCharacterOne.characterName = "Eric";
-            AiCharacterTwo.characterName = "Ben";
+            name2 = "Eric";
+            name3 = "Tim";
             AiCharacterOne.characterRace = "Elf";
             AiCharacterTwo.characterRace = "Dwarf";
-            AiCharacterOne.sideArm = "sword";
-            AiCharacterTwo.sideArm = "warhammer";
+            sidearm2 = "sword";
+            sidearm3 = "warhammer";
 
             Console.WriteLine($"Alright so you are a {PlayersCharacter.characterRace} {PlayersCharacter.characterClass} named {PlayersCharacter.characterName}. Sounds like a pretty good build to me.");
             Console.WriteLine($"Your friends also made characters! They made a {AiCharacterOne.characterRace} {AiCharacterOne.characterClass} named {AiCharacterOne.characterName} and a {AiCharacterTwo.characterRace} {AiCharacterTwo.characterClass} named {AiCharacterTwo.characterName}.");
