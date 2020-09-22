@@ -5,3 +5,10 @@ D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framewo
 D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).pdb
 D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).exe
 D:\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).pdb
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).exe.config
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).exe
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\bin\Debug\DnD Text Adventure (.NET Framework).pdb
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).csprojAssemblyReference.cache
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).csproj.CoreCompileInputs.cache
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).exe
+C:\Users\Josh\Documents\School Stuff 2020-2021\C# Stuff\DnD-Text-Adventure--.NET-Framework-\DnD Text Adventure (.NET Framework)\DnD Text Adventure (.NET Framework)\obj\Debug\DnD Text Adventure (.NET Framework).pdb
