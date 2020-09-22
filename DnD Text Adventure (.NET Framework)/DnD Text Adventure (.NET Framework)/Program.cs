@@ -9,14 +9,14 @@ namespace DnD_Text_Adventure__.NET_Framework_
     class Program
     {
 
-        static bool QuestionConfirmationStopper = true;
-        static string userInput;
-        static string[] enemies = { "goblin", "troll", "skeleton", "ghoul", "skeleton" };
-        static string currentEnemy;
-        static int currentEnemyInitiative;
-        static int currentPlayerInitiative;
-        static int currentAIOneInitiative;
-        static int currentAITwoInitiative;
+        public static bool QuestionConfirmationStopper = true;
+        public static string userInput;
+        public static string[] enemies = { "goblin", "troll", "skeleton", "ghoul", "skeleton" };
+        public static string currentEnemy;
+        public static int currentEnemyInitiative;
+        public static int currentPlayerInitiative;
+        public static int currentAIOneInitiative;
+        public static int currentAITwoInitiative;
 
         public static int maxHealthPoints1;
         public static int strength1;
@@ -34,6 +34,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int initativeModifier1;
         public static string sidearm1;
         public static string name1;
+        public static int currentPlayerHealth;
 
         public static int maxHealthPoints2;
         public static int strength2;
@@ -51,6 +52,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int initativeModifier2;
         public static string sidearm2;
         public static string name2;
+        public static int currentAIOneHealth;
 
         public static int maxHealthPoints3;
         public static int strength3;
@@ -68,6 +70,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
         public static int initativeModifier3;
         public static string sidearm3;
         public static string name3;
+        public static int CurrentAITwoHealth;
 
         public static void Main(string[] args)
         {
@@ -144,6 +147,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             initativeModifier1 = PlayersCharacter.initativeModifier;
             sidearm1 = PlayersCharacter.sideArm;
             name1 = PlayersCharacter.characterName;
+            currentPlayerHealth = PlayersCharacter.maxHealthPoints;
            
             maxHealthPoints2 = AiCharacterOne.maxHealthPoints;
             strength2 = AiCharacterOne.strength;
@@ -161,7 +165,8 @@ namespace DnD_Text_Adventure__.NET_Framework_
             initativeModifier2 = AiCharacterOne.initativeModifier;
             sidearm2 = AiCharacterOne.sideArm;
             name2 = AiCharacterOne.characterName;
-           
+            currentAIOneHealth = AiCharacterOne.maxHealthPoints;
+
             maxHealthPoints3 = AiCharacterTwo.maxHealthPoints;
             strength3 = AiCharacterTwo.strength;
             strengthMod3 = AiCharacterTwo.strengthMod;
@@ -178,6 +183,7 @@ namespace DnD_Text_Adventure__.NET_Framework_
             initativeModifier3 = AiCharacterTwo.initativeModifier;
             sidearm3 = AiCharacterTwo.sideArm;
             name3 = AiCharacterTwo.characterName;
+            CurrentAITwoHealth = AiCharacterTwo.maxHealthPoints;
 
             string tempPlayerInput;
             string tempDoubleChoiceSwitch;
@@ -269,24 +275,6 @@ namespace DnD_Text_Adventure__.NET_Framework_
                 }
             
         }
-        public static void EnemyEncounter()
-        {
-            Random rand = new Random();
-
-            
-            
-
-            //Console.WriteLine($"The charisma is {PlayersCharacter.charisma}");
-            currentEnemy = enemies[Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 6) - 1)))];
-            currentEnemyInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
-            currentPlayerInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
-            currentAIOneInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
-            currentAITwoInitiative = Convert.ToInt32(Math.Floor(Convert.ToDouble(rand.Next(1, 21) - 1)));
-
-            Console.WriteLine($"Oh no! You encountered a {currentEnemy}!");
-
-            Console.WriteLine();
-            //while ()
-        }
+        
     }
 }
